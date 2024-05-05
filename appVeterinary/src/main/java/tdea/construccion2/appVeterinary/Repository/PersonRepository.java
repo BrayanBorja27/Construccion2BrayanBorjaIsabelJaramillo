@@ -1,0 +1,15 @@
+package tdea.construccion2.appVeterinary.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import tdea.construccion2.appVeterinary.Models.Person;
+
+@Repository
+public interface PersonRepository extends JpaRepository<Person, Long> {
+	public Person findByUserName(String username);
+	public boolean existsById(long id);
+	public Person findById(long id);
+	public boolean existsByUserName(String username);
+
+}
